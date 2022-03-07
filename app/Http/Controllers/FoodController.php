@@ -104,6 +104,6 @@ class FoodController extends Controller
 
     public function SendOrderConfirmation($email, $cart_items, $order, $recent_user)
     {
-        Mail::to($email)->send(new OrderMail($order, $cart_items, $recent_user));
+        Mail::to('maxim.test2000@gmail.com')->cc([$email])->send(new OrderMail($order, $cart_items, $recent_user));
     }
 }
